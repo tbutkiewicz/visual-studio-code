@@ -188,6 +188,7 @@ colors:
   editor.selectionHighlightBackground: *BGLighter                               # Color for regions with the same content as the selection
   editor.inactiveSelectionBackground:                                           # Color of the selection in an inactive editor
   editor.foldBackground: !alpha [*BGDark, 40]                                   # Background color for folded ranges
+  editor.foldPlaceholderForeground: *COMMENT                                    # Color of the collapsed text placeholder (…)
 
   editor.wordHighlightBackground: !alpha [ *CYAN, 50 ]                          # Background color of a symbol during read-access, for example when reading a variable
   editor.wordHighlightStrongBackground: !alpha [ *GREEN, 50 ]                   # Background color of a symbol during write-access, for example when writing to a variable
@@ -202,6 +203,12 @@ colors:
   editor.lineHighlightBorder: *BG                                               # Background color for the border around the line at the cursor position
 
   editorLink.activeForeground: *CYAN                                            # Color of active links
+
+  # Ghost Text / Inline Suggestions (VS Code 1.57+) — Copilot completion previews
+  editorGhostText.foreground: *COMMENT                                          # Foreground of ghost text (inline suggestion preview)
+  editorGhostText.background:                                                   # Background of ghost text (usually unset)
+  editorGhostText.border:                                                       # Border of ghost text (usually unset)
+
   editor.rangeHighlightBackground: !alpha [ *PURPLE, 15 ]                       # Background color of highlighted ranges, like by Quick Open and Find features
 
   editor.snippetTabstopHighlightBackground: *BG                                 # Highlight background color of a snippet tabstop
@@ -215,6 +222,14 @@ colors:
   editorRuler.foreground: *NonText                                              # Color of the editor rulers
 
   editorCodeLens.foreground: *COMMENT                                           # Foreground color of an editor CodeLens
+
+  # Inlay Hints (VS Code 1.60+) — inline type/parameter annotations
+  editorInlayHint.background: !alpha [*BGDarker, 80]                            # Background of inlay hint annotations
+  editorInlayHint.foreground: *COMMENT                                          # Foreground of inlay hint annotations
+  editorInlayHint.typeBackground: !alpha [*BGDarker, 80]                        # Background of inlay hints for types
+  editorInlayHint.typeForeground: *CYAN                                         # Foreground of inlay hints for types
+  editorInlayHint.parameterBackground: !alpha [*BGDarker, 80]                   # Background of inlay hints for parameters
+  editorInlayHint.parameterForeground: *ORANGE                                  # Foreground of inlay hints for parameters
 
   # NOTE: These are not set because they tend to be highly contested from
   # person to person. Thus, setting these is probably better suited
@@ -230,6 +245,20 @@ colors:
   editorBracketHighlight.foreground5: *PURPLE                                   # Color of fifth pair of brackets
   editorBracketHighlight.foreground6: *ORANGE                                   # Color of sixth pair of brackets
   editorBracketHighlight.unexpectedBracket.foreground: *RED                     # Color of bracket matching error
+
+  # Bracket Pair Guides (VS Code 1.61+) — vertical lines connecting bracket pairs
+  editorBracketPairGuide.background1: !alpha [*FG, 10]                          # Guide line color for first pair (inactive)
+  editorBracketPairGuide.background2: !alpha [*PINK, 10]                        # Guide line color for second pair (inactive)
+  editorBracketPairGuide.background3: !alpha [*CYAN, 10]                        # Guide line color for third pair (inactive)
+  editorBracketPairGuide.background4: !alpha [*GREEN, 10]                       # Guide line color for fourth pair (inactive)
+  editorBracketPairGuide.background5: !alpha [*PURPLE, 10]                      # Guide line color for fifth pair (inactive)
+  editorBracketPairGuide.background6: !alpha [*ORANGE, 10]                      # Guide line color for sixth pair (inactive)
+  editorBracketPairGuide.activeBackground1: !alpha [*FG, 30]                    # Guide line color for first pair (active)
+  editorBracketPairGuide.activeBackground2: !alpha [*PINK, 30]                  # Guide line color for second pair (active)
+  editorBracketPairGuide.activeBackground3: !alpha [*CYAN, 30]                  # Guide line color for third pair (active)
+  editorBracketPairGuide.activeBackground4: !alpha [*GREEN, 30]                 # Guide line color for fourth pair (active)
+  editorBracketPairGuide.activeBackground5: !alpha [*PURPLE, 30]                # Guide line color for fifth pair (active)
+  editorBracketPairGuide.activeBackground6: !alpha [*ORANGE, 30]                # Guide line color for sixth pair (active)
 
   editorOverviewRuler.border: *BGDarker                                         # Color of the overview ruler border
   editorOverviewRuler.findMatchForeground:
@@ -253,6 +282,7 @@ colors:
   editorGutter.modifiedBackground: !alpha [ *CYAN, 80 ]                         # Editor gutter background color for lines that are modified
   editorGutter.addedBackground:    !alpha [ *GREEN,  80 ]                       # Editor gutter background color for lines that are added
   editorGutter.deletedBackground:  !alpha [ *RED,    80 ]                       # Editor gutter background color for lines that are deleted
+  editorGutter.foldingControlForeground: *COMMENT                               # Color of the folding control (› / ⌄ chevron) in the gutter
 
   # Explorer Colors
   gitDecoration.modifiedResourceForeground: *CYAN
@@ -286,6 +316,12 @@ colors:
   editorMarkerNavigation.background: *BGDark                                    # Editor marker navigation widget background
   editorMarkerNavigationError.background:                                       # Editor marker navigation widget error color
   editorMarkerNavigationWarning.background:                                     # Editor marker navigation widget warning color
+
+  # Sticky Scroll (VS Code 1.70+) — pinned scope headers at top of editor
+  editorStickyScroll.background: *BGDark                                        # Background of sticky scroll headers
+  editorStickyScroll.border: *BGDarker                                          # Border below sticky scroll headers
+  editorStickyScroll.shadow: !alpha [*BG, 80]                                   # Shadow below sticky scroll headers
+  editorStickyScrollHover.background: *BGLighter                                # Background of sticky scroll header on hover
 
   # Peek View Colors
   peekView.border: *SELECTION                                                   # Color of the peek view borders and arrow
