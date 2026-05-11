@@ -48,6 +48,11 @@
                 "label": "Omni",
                 "uiTheme": "vs-dark",
                 "path": "./theme/omni.json"
+            },
+            {
+                "label": "Omni (No Italics)",
+                "uiTheme": "vs-dark",
+                "path": "./theme/omni-no-italics.json"
             }
         ]
     },
