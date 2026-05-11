@@ -26,7 +26,7 @@
         "url": "https://github.com/getomni/visual-studio-code/issues"
     },
     "engines": {
-        "vscode": "^1.13.0"
+        "vscode": "^1.70.0"
     },
     "categories": [
         "Themes"

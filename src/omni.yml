@@ -35,10 +35,6 @@ omni:
     - &COLOR13              '#988bc7'
     - &COLOR14              '#A4FFFF'
     - &COLOR15              '#F7F7FB'
-  brightOther:
-    # Temporary (awaiting fix)
-    - &TEMP_QUOTES          '#e7de79'
-    - &TEMP_PROPERTY_QUOTES '#7159C1'
   other:
     - &LineHighlight        '#44475A75'
     - &NonText              '#FFFFFF1A'
@@ -217,8 +213,8 @@ colors:
   editor.snippetFinalTabstopHighlightBorder: *GREEN                             # Highlight border color of the final tabstop of a snippet
 
   editorWhitespace.foreground: *NonText                                         # Color of whitespace characters in the editor
-  editorIndentGuide.background: *NonText                                        # Color of the editor indentation guides
-  editorIndentGuide.activeBackground: !alpha [ *WHITE, 45]                      # Color of the active indentation guide
+  editorIndentGuide.background1: *NonText                                       # Color of the editor indentation guides
+  editorIndentGuide.activeBackground1: !alpha [ *WHITE, 45]                     # Color of the active indentation guide
   editorRuler.foreground: *NonText                                              # Color of the editor rulers
 
   editorCodeLens.foreground: *COMMENT                                           # Foreground color of an editor CodeLens
@@ -375,18 +371,19 @@ colors:
   titleBar.inactiveBackground: *BGDarker                                        # Title Bar background when the window is inactive
   titleBar.inactiveForeground: *COMMENT                                         # Title Bar foreground when the window is inactive
 
-  # Notification Dialog Colors
-  notification.background: *BG                                                  # Notifications background color
-  notification.foreground: *FG                                                  # Notifications foreground color
-  notification.buttonBackground: *SELECTION
-  notification.buttonForeground: *FG
-  notification.buttonHoverBackground: *LineHighlight
-  notification.errorBackground: *RED
-  notification.errorForeground: *FG
-  notification.infoBackground: *CYAN
-  notification.infoForeground: *BG
-  notification.warningBackground: *ORANGE
-  notification.warningForeground: *BG
+  # Notification Colors (VS Code 1.38+ notification center & toasts)
+  # Old single-notification.* keys were removed; these are the current API
+  notifications.background: *BG                                                 # Notification center background
+  notifications.foreground: *FG                                                 # Notification center foreground
+  notifications.border: *BGDarker                                               # Border between notifications in the center
+  notificationCenter.border: *BGDarker                                          # Border of the notification center
+  notificationCenterHeader.background: *BGDarker                                # Background of notification center header
+  notificationCenterHeader.foreground: *FG                                      # Foreground of notification center header
+  notificationToast.border: *BGDarker                                           # Border of notification toasts
+  notificationLink.foreground: *CYAN                                            # Foreground of links in notifications
+  notificationsErrorIcon.foreground: *RED                                       # Icon color for error notifications
+  notificationsWarningIcon.foreground: *ORANGE                                  # Icon color for warning notifications
+  notificationsInfoIcon.foreground: *CYAN                                       # Icon color for info notifications
 
   # Extensions
   extensionButton.prominentForeground: *FG                                      # Extension view button foreground color (for example Install button)
@@ -1042,23 +1039,6 @@ tokenColors:
     - string
     settings:
       foreground: *YELLOW
-
-  - name: String quotes (temporary vscode fix)
-    scope:
-    # NOTE: This is a temporary fix for VSCode expand selection.
-    # See (https://github.com/Microsoft/vscode/issues/4795)
-    - punctuation.definition.string.begin
-    - punctuation.definition.string.end
-    settings:
-      foreground: *TEMP_QUOTES
-
-  - name: Property quotes (temporary vscode fix)
-    scope:
-    # NOTE: Same as above
-    - punctuation.support.type.property-name.begin
-    - punctuation.support.type.property-name.end
-    settings:
-      foreground: *TEMP_PROPERTY_QUOTES
 
   - name: Docstrings
     scope:
